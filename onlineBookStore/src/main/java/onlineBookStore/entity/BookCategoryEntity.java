@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="tbl_category")
 public class BookCategoryEntity {
@@ -23,6 +26,7 @@ public class BookCategoryEntity {
 	private String categoryName;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="category")
+	@JsonManagedReference
 	private Set<BookEntity> book;
 
 	public Long getId() {

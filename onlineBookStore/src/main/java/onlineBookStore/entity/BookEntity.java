@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="tbl_book")
 public class BookEntity {
@@ -45,6 +48,7 @@ public class BookEntity {
 
 	@ManyToOne
 	@JoinColumn(name="category_id", nullable=false)
+	@JsonBackReference
 	private BookCategoryEntity category;
 
 	public Long getId() {
