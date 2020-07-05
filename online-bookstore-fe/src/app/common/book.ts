@@ -9,4 +9,5 @@ export class Book {
     unitsInStock: number;
     createdOn: Date;
     updatedOn: Date;
+    isAdded: Boolean;
 }
